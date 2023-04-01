@@ -1,0 +1,263 @@
+<!-- This page will be seen if you logged in -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fablix</title>
+    <!-- Using jQuery -->
+<!--    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- include jquery autocomplete JS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+
+    <!-- Bootstrap for CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+
+        body {
+            background-image: url("Image/orange.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        div {
+            margin: 0px 100px 75px 100px;
+            /*font-family: "Lucida Console", "Courier New", monospace;*/
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: tomato;
+            font-family: "Sofia", sans-serif;
+            font-size: 75px;
+        }
+        p {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        h5,h4 {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        h4{
+            text-align: center;
+        }
+        .title {
+            font-weight: bold;
+        }
+
+        #search_form {
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 20px;
+        }
+        .links,.title{
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width: 100%;
+        }
+        input{
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 15px;
+        }
+
+        thead {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 30px;
+            background-color: orangered;
+        }
+        tbody {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 18px;
+        }
+        tr:nth-child(even){
+            background-color: #FF45005F;
+        }
+        th {
+            text-align: center;
+        }
+        table {
+            border-radius: 25px;
+        }
+        a:link {
+            color:#0000ff;
+        }
+        a:visited {
+            color:#000000;
+        }
+        a:hover {
+            /*font-size:105%;*/
+            color:#ffcc00;
+        }
+
+        #fulltext_search_form {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 20px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .autocomplete-suggestions {
+            border: 1px solid #999;
+            background: #FFF;
+            overflow: auto;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .autocomplete-suggestions strong {
+            font-weight: normal;
+            color: #3399FF;
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 20px;
+        }
+        .autocomplete-suggestion {
+            padding: 2px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0 auto;
+            width: 100%;
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 20px;
+        }
+        .autocomplete-selected {
+            background: #F0F0F0;
+        }
+        .autocomplete-group {
+            padding: 2px 5px;
+        }
+        .autocomplete-group strong {
+            display: block;
+            border-bottom: 1px solid #000;
+        }
+        .autocomplete-searchbox {
+            height: 30px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h5 id="login_link">
+        <a href="login.html">
+            <= Login
+        </a>
+    </h5>
+    <h5 id="movie_list_link" >
+        <a href="movie-list.html">
+            <= Movie List
+        </a>
+    </h5>
+    <h5 id="cart_link">
+        <a href="cart.html"><= Checkout</a>
+    </h5>
+    <h1>Welcome to Fablix!</h1>
+    <br>
+    <h4 class="title">Movie Genres</h4>
+    <br>
+    <h5 class="links">
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g1">Action</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g2">Adult</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g3">Adventure</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g4">Animation</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g5">Biography</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g6">Comedy</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g7">Crime</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g8">Documentary</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g9">Drama</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g10">Family</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g11">Fantasy</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g12">History</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g13">Horror</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g14">Music</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g15">Musical</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g16">Mystery</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g17">Reality-TV</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g18">Romance</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g19">Sci-Fi</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g20">Sport</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g21">Thriller</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g22">War</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=g23">Western</a>
+    </h5>
+    <br>
+    <h4 class="title">Movie Titles</h4>
+    <br>
+    <h5 class="links">
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t0">0</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t1">1</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t2">2</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t3">3</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t4">4</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t5">5</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t6">6</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t7">7</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t8">8</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t9">9</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tA">A</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tB">B</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tC">C</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tD">D</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tE">E</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tF">F</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tG">G</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tH">H</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tI">I</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tJ">J</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tK">K</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tL">L</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tM">M</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tN">N</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tO">O</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tP">P</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tQ">Q</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tR">R</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tS">S</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tT">T</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tU">U</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tV">V</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tW">W</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tX">X</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tY">Y</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=tZ">Z</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=desc&title=asc&sort=1&type=t*">*</a>
+    </h5>
+    <br>
+    <h4 class="title">Movie Search</h4>
+    <form ACTION="#" id="search_form" METHOD="post">
+        <br>
+        <label>
+            <input name="movie_title" type="text" placeholder="movie_title">
+            <input name="movie_year" type="text" placeholder="movie_year">
+            <input name="movie_director" type="text" placeholder="movie_director">
+            <input name="movie_star" type="text" placeholder="movie_star">
+        </label>
+        <input style="font-size: 20px;" type="submit" VALUE="search">
+    </form>
+    <br>
+    <form ACTION="#" id="fulltext_search_form" METHOD="post">
+        <br>
+        <label>
+            <input type="text" name="query" id="autocomplete"
+                   class="autocomplete-searchbox form-control"
+                   placeholder="Search Movies"/>
+        </label>
+        <input style="font-size: 20px;" type="submit" VALUE="search">
+    </form>
+    <br>
+    <table id=movie_table class="table table-striped">
+        <thead id=movie_table_head></thead>
+        <tbody id=movie_table_body></tbody>
+    </table>
+</div>
+
+<!-- include your own JS file -->
+<script type='text/javascript' src='index.js'></script>
+
+</body>
+</html>

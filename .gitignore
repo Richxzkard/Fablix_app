@@ -1,0 +1,13 @@
+.idea
+*.iml
+target/
+.DS_Store
+create_table.sql
+movie-data.sql
+parse/*.xml
+
+android/.gradle
+android/local.properties
+android/.idea
+android/build
+android/captures

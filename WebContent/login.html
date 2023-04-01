@@ -1,0 +1,97 @@
+<!-- This page will be redirected from any url if you are not logged in -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login to Fablix</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+        body {
+            background-image: url("Image/orange.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #outside {
+            margin: 100px 100px 75px 100px;
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: tomato;
+            font-family: "Sofia", sans-serif;
+            font-size: 75px;
+        }
+
+        #login_form{
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width: 30%;
+            font-size: 20px;
+        }
+        #login_error_message{
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width:200px;
+        }
+        .g-recaptcha{
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            text-align: left;
+            /*width: 30%;*/
+        }
+        input{
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="outside">
+    <h2>Login to Fablix</h2>
+    <!-- Set the method to POST to avoid showing the username/password in the URL
+         The default action is disabled to allow your own implementation. -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <form id="login_form" method="post" action="#">
+        <label><b>Email   </b></label>
+        <label>
+            <input name="email" placeholder="Enter Email" type="text">
+        </label>
+        <br>
+        <label><b>Password</b></label>
+        <label>
+            <input  name="password" placeholder="Enter Password" type="password">
+        </label>
+        <br><br>
+        <input style="font-size: 40px;" type="submit" value="Login">
+        <br><br>
+        <div class="g-recaptcha" data-sitekey="6LeZgOEiAAAAAAhiQKQRBdaMdGp-YAwXYpOZhYfQ"></div>
+    </form>
+
+    <br>
+    <br>
+    <div id="login_error_message"></div>
+
+</div>
+
+<!-- include jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- include our own JS file -->
+<script src="./login.js"></script>
+
+<script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
+
+</body>
+</html>

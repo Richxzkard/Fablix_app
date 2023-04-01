@@ -1,0 +1,299 @@
+<!-- This page will be seen if you logged in -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fablix</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+        body {
+            background-image: url("Image/orange.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        div {
+            margin: 0px 100px 75px 100px;
+            /*font-family: "Lucida Console", "Courier New", monospace;*/
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: tomato;
+            font-family: "Sofia", sans-serif;
+            font-size: 75px;
+        }
+        p {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        h5,h4 {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        h4{
+            text-align: center;
+        }
+        .title {
+            font-weight: bold;
+        }
+
+        #search_form {
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width: 80%;
+            font-size: 20px;
+        }
+        .links,.title{
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin: 0 auto;
+            width: 80%;
+        }
+        input{
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 15px;
+        }
+
+        thead {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 30px;
+            background-color: orangered;
+        }
+        tbody {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 18px;
+        }
+        tr:nth-child(even){
+            background-color: #FF45005F;
+        }
+        th {
+            text-align: center;
+        }
+        table {
+            border-radius: 25px;
+        }
+        a:link {
+            color:#0000ff;
+        }
+        a:visited {
+            color:#000000;
+        }
+        a:hover {
+            /*font-size:105%;*/
+            color:#ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h5 id="index_link">
+        <a href="index.html"><= Main Page</a>
+    </h5>
+    <h5 id="login_link">
+        <a href="login.html">
+            <= Login
+        </a>
+    </h5>
+    <h5 id="movie_list_link" >
+        <a href="movie-list.html">
+            <= Movie List
+        </a>
+    </h5>
+    <h5 id="cart_link">
+        <a href="cart.html"><= Checkout</a>
+    </h5>
+    <h1>Dashboard</h1>
+    <h4 class="title">Add Star</h4>
+    <form ACTION="#" id="star_from" METHOD="post">
+        <br>
+        <label>
+            <input name="name" type="text" placeholder="name">
+            <input name="birthYear" type="text" placeholder="birthYear">
+        </label>
+        <input style="font-size: 20px;" type="submit" VALUE="ADD">
+    </form>
+    <h4 class="title">Add Movie</h4>
+    <form ACTION="#" id="movie_from" METHOD="post">
+        <br>
+        <label>
+            <input name="title" type="text" placeholder="title">
+            <input name="year" type="text" placeholder="year">
+            <input name="director" type="text" placeholder="director">
+            <input name="star" type="text" placeholder="star">
+            <input name="genre" type="text" placeholder="genre">
+        </label>
+        <input style="font-size: 20px;" type="submit" VALUE="ADD">
+    </form>
+    <br>
+    <h4 class="title">Creditcards Metadata</h4>
+    <br>
+    <table id=creditcards_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=creditcards_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Customers Metadata</h4>
+    <br>
+    <table id=customers_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=customers_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Employees Metadata</h4>
+    <br>
+    <table id=employees_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=employees_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Genres Metadata</h4>
+    <br>
+    <table id=genres_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=genres_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Genres_in_movies Metadata</h4>
+    <br>
+    <table id=genres_in_movies_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=genres_in_movies_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Movies Metadata</h4>
+    <br>
+    <table id=movies_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=movies_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Ratings Metadata</h4>
+    <br>
+    <table id=ratings_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=ratings_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Sales Metadata</h4>
+    <br>
+    <table id=sales_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=sales_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Stars Metadata</h4>
+    <br>
+    <table id=stars_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=stars_table_body></tbody>
+    </table>
+    <br>
+    <h4 class="title">Stars_in_movies Metadata</h4>
+    <br>
+    <table id=stars_in_movies_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Key</th>
+            <th>Default</th>
+            <th>Extra</th>
+        </tr>
+        </thead>
+        <tbody id=stars_in_movies_table_body></tbody>
+    </table>
+
+
+</div>
+
+<!-- include your own JS file -->
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script type='text/javascript' src='dashboard.js'></script>
+</body>
+</html>

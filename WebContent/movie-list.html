@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    <title>Movie List</title>
+
+    <style>
+        /*div {*/
+        /*    background-color: tomato;*/
+        /*}*/
+        body {
+            background-image: url("Image/orange.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        div {
+            margin: 0px 100px 75px 100px;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: tomato;
+            font-family: "Sofia", sans-serif;
+            font-size: 75px;
+        }
+        h5,h4 {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        .title {
+            font-weight: bold;
+        }
+        #page_link{
+            text-align: center;
+        }
+        #n_link{
+            text-aligh: center;
+        }
+        thead {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 30px;
+            background-color: orangered;
+        }
+        tbody {
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: 18px;
+        }
+        tr:nth-child(even){
+            background-color: #FF45005F;
+        }
+        th {
+            text-align: center;
+        }
+        table {
+            border-radius: 25px;
+        }
+        a:link {
+            color:#0000ff;
+        }
+        a:visited {
+            color:#000000;
+        }
+        a:hover {
+            /*font-size:105%;*/
+            color:#ffcc00;
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+
+    <h5 id="index_link">
+        <a href="index.html"><= Main Page</a>
+    </h5>
+    <h5 id="cart_link">
+        <a href="cart.html"><= Checkout</a>
+    </h5>
+    <h1>Movie List</h1>
+    <h5 id="page_link">
+        <a href="movie-list.html?pageChange=1&NChange=&rating=&title=&sort=&type="><= Previous  </a>
+        <a href="movie-list.html?pageChange=2&NChange=&rating=&title=&sort=&type=">  Next =></a>
+    </h5>
+    <br>
+    <h4 class="title">Choose Page Entry Limit N </h4>
+    <h5 id="n_link">
+        <a href="movie-list.html?pageChange=&NChange=10&rating=&title=&sort=&type=">10</a>
+        <a href="movie-list.html?pageChange=&NChange=25&rating=&title=&sort=&type=">25</a>
+        <a href="movie-list.html?pageChange=&NChange=50&rating=&title=&sort=&type=">50</a>
+        <a href="movie-list.html?pageChange=&NChange=100&rating=&title&sort=&type=">100</a>
+    </h5>
+    <br>
+    <h4 class="title">Select Sorting Priority</h4>
+    <h5 id="sort_link_1">
+        <a href="movie-list.html?pageChange=&NChange=&rating=&title=&sort=1&type=">Rating First</a>
+        <a href="movie-list.html?pageChange=&NChange=&rating=&title=&sort=2&type=">Title First</a>
+    </h5>
+    <br>
+    <h4 class="title">Select Ascending and Descending </h4>
+    <h5 id="sort_link_2">
+        <a href="movie-list.html?pageChange=&NChange=&rating=1&title=&sort=&type=">Rating Ascending</a>
+        <a href="movie-list.html?pageChange=&NChange=&rating=2&title=&sort=&type=">Rating Descending</a>
+        <a href="movie-list.html?pageChange=&NChange=&rating=&title=1&sort=&type=">Title Ascending</a>
+        <a href="movie-list.html?pageChange=&NChange=&rating=&title=2&sort=&type=">Title Descending</a>
+    </h5>
+    <br>
+
+    <table id=movie_table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Genres</th>
+            <th>Stars</th>
+            <th>Ratings</th>
+            <th>Cart</th>
+        </tr>
+        </thead>
+
+        <tbody id=movie_table_body></tbody>
+    </table>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="movie-list.js"></script>
+</body>
+
+
+</html>
